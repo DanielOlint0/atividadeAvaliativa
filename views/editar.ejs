@@ -1,0 +1,35 @@
+<!-- views/listarContatos.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Contatos</title>
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    <% if (contatos.length > 0) { %>
+        <ul>
+            <% contatos.forEach(contato => { %>
+                <li>
+                    <strong>Nome:</strong> <%= contato.nome %><br>
+                    <strong>Idade:</strong> <%= contato.idade %><br>
+                    <strong>Relacionamento:</strong> <%= contato.relacionamento %><br>
+                    <strong>Email:</strong> <%= contato.email %><br>
+                    <strong>Telefone:</strong> <%= contato.telefone %><br>
+                    <!-- Botão de editar -->
+                    <form action="/agenda/editar/<%= contato.id %>" method="get">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <!-- Botão de excluir -->
+                    <form action="/agenda/excluir/<%= contato.id %>" method="post">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Nenhum contato encontrado.</p>
+    <% } %>
+</body>
+</html>
