@@ -1,4 +1,3 @@
-<!-- views/listarContatos.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +16,9 @@
                     <strong>Relacionamento:</strong> <%= contato.relacionamento %><br>
                     <strong>Email:</strong> <%= contato.email %><br>
                     <strong>Telefone:</strong> <%= contato.telefone %><br>
-                    <!-- Botão de editar -->
                     <form action="/agenda/editar/<%= contato.id %>" method="get">
                         <button type="submit">Editar</button>
                     </form>
-                    <!-- Botão de excluir -->
                     <form action="/agenda/excluir/<%= contato.id %>" method="post">
                         <button type="submit">Excluir</button>
                     </form>
